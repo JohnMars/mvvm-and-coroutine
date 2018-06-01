@@ -10,7 +10,7 @@ class NewsInteractor(
         private val newsRepository: NewsRepository
 ) {
 
-    fun getTopNews(): Response<List<News>> {
+    suspend fun getTopNews(): Response<List<News>> {
         return newsRepository.getNews()
     }
 }

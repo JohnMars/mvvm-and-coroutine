@@ -7,5 +7,6 @@ import retrofit2.Response
  *
  */
 interface NewsRepository {
-    fun getNews(): Response<List<News>>
+
+    suspend fun getNews(): Response<List<News>>
 }

@@ -15,7 +15,7 @@ class DefaultNewsRepository(
         private val mapper: Mapper<RedditNewsDataResponse, News>
 ) : NewsRepository {
 
-    override fun getNews(): Response<List<News>> {
+    override suspend fun getNews(): Response<List<News>> {
         val topResponse = redditApi.getTop(after = "", limit = "20").execute()
         val children = topResponse.body()?.data?.children
 
